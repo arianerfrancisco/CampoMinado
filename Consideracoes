@@ -1,0 +1,1 @@
+noneMatch - Retorna true se nenhum dos elementos da stream corresponde ao predicado fornecido.

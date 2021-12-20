@@ -3,6 +3,8 @@ package br.com.cod3r.cm.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.cod3r.cm.excecao.ExplosaoException;
+
 public class Campo {
 	private final int linha;
 	private final int coluna;
@@ -37,4 +39,26 @@ public class Campo {
 			return false;
 		}
 	}
+	void alternarMarcacao() {
+		if(!aberto) {
+			marcado=!marcado;
+		}
+	}
+	
+	boolean abrir() {
+		
+		if(!aberto && !marcado); {
+		aberto = true;
+		
+		if(minado) {
+			throw new ExplosaoException();
+			}
+		}
+		return false;
+	}
+
+	boolean vizinhancasegura() {
+		return vizinhos.stream().noneMatch(v -> v.minado);
+	}
+
 }
